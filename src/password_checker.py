@@ -93,7 +93,7 @@ class PasswordChecker:
         try:
             # Отправляем запрос к API
             url = f"https://api.pwnedpasswords.com/range/{prefix}"
-            response = requests.get(url, timeout=10)
+            response = requests.get(url, timeout=(10,5))
             
             if response.status_code == 200:
                 # Ищем наш хеш в ответе
